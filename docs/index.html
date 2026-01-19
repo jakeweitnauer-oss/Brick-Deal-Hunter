@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Deal Hunter - Find the Best LEGO Deals</title>
+    <meta name="description" content="Brick Deal Hunter helps LEGO enthusiasts find the best deals on LEGO sets across major US retailers. Compare prices, track discounts, and never miss a sale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E5E5E5 100%);
+            min-height: 100vh;
+            color: #1A1A1A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #D91F2A 0%, #B71C1C 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(217, 31, 42, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #F7B500;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            color: #F7B500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1A1A1A;
+        }
+
+        .hero h1 span {
+            color: #D91F2A;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #6B7280;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #D91F2A;
+            color: white;
+            box-shadow: 0 4px 15px rgba(217, 31, 42, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(217, 31, 42, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1A1A1A;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #D91F2A 0%, #F7B500 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        /* Retailers */
+        .retailers {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .retailers h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .retailers p {
+            text-align: center;
+            color: #6B7280;
+            margin-bottom: 40px;
+        }
+
+        .retailer-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .retailer-badge {
+            padding: 12px 24px;
+            background: #F5F5F5;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #1A1A1A;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #9CA3AF;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #F7B500;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .features h2,
+            .retailers h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🧱</div>
+                    <div class="logo-text">Brick <span>Deal</span> Hunter</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Find the Best <span>LEGO Deals</span></h1>
+            <p>Compare prices across 16+ major retailers instantly. Track discounts, get alerts, and never overpay for LEGO sets again.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Download App</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Brick Deal Hunter?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Real-Time Price Comparison</h3>
+                    <p>Compare LEGO prices across Amazon, Walmart, Target, LEGO.com, and 12+ more retailers in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Deal Alerts</h3>
+                    <p>Set custom alerts for specific sets or discount thresholds. Get notified instantly when prices drop.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Price History</h3>
+                    <p>View historical price data to know if you're getting a good deal or should wait for a better price.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Filters</h3>
+                    <p>Filter by theme, price range, discount percentage, and retailer to find exactly what you're looking for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>One-Tap Purchase</h3>
+                    <p>Found a deal? Tap to go directly to the retailer's product page and complete your purchase.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧱</div>
+                    <h3>Comprehensive Database</h3>
+                    <p>Access thousands of current LEGO sets with images, piece counts, and official MSRP data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="retailers">
+        <div class="container">
+            <h2>Supported Retailers</h2>
+            <p>We track prices from all major US retailers that sell LEGO</p>
+            <div class="retailer-logos">
+                <span class="retailer-badge">LEGO.com</span>
+                <span class="retailer-badge">Amazon</span>
+                <span class="retailer-badge">Walmart</span>
+                <span class="retailer-badge">Target</span>
+                <span class="retailer-badge">Best Buy</span>
+                <span class="retailer-badge">Kohl's</span>
+                <span class="retailer-badge">Barnes & Noble</span>
+                <span class="retailer-badge">Sam's Club</span>
+                <span class="retailer-badge">Costco</span>
+                <span class="retailer-badge">Walgreens</span>
+                <span class="retailer-badge">GameStop</span>
+                <span class="retailer-badge">Meijer</span>
+                <span class="retailer-badge">Fred Meyer</span>
+                <span class="retailer-badge">shopDisney</span>
+                <span class="retailer-badge">Entertainment Earth</span>
+                <span class="retailer-badge">Toys "R" Us</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Brick Deal Hunter. All rights reserved.</p>
+            <p>LEGO is a trademark of the LEGO Group, which does not sponsor, authorize, or endorse this app.</p>
+            <p><a href="mailto:contact@brickdealhunter.com">Contact Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
