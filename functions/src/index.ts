@@ -60,7 +60,10 @@ interface DealData extends PriceData {
 // REBRICKABLE API - Primary Source
 // ============================================
 
-const REBRICKABLE_API_KEY = "bde354d99dbc6aa8a37181212001f6d5";
+// Get API key from Firebase Functions config or environment variable
+// Set with: firebase functions:config:set rebrickable.api_key="your_key"
+// Or set REBRICKABLE_API_KEY environment variable in .env.local
+const REBRICKABLE_API_KEY = process.env.REBRICKABLE_API_KEY || "";
 
 // Theme ID to name mapping for Rebrickable
 const THEME_NAMES: Record<number, string> = {

@@ -44,8 +44,8 @@ import { getDeals as getFirebaseDeals, initializeFirebase } from '../services/fi
 import { RETAILERS, ALL_RETAILER_IDS } from '../constants/retailers';
 import { RetailerId } from '../types';
 
-// Your Rebrickable API key
-const REBRICKABLE_API_KEY = 'bde354d99dbc6aa8a37181212001f6d5';
+// Rebrickable API key from environment
+const REBRICKABLE_API_KEY = process.env.EXPO_PUBLIC_REBRICKABLE_API_KEY || '';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
