@@ -239,7 +239,7 @@ export function SettingsScreen() {
           <View style={styles.card}>
             <Pressable
               style={styles.linkRow}
-              onPress={() => openLink('mailto:brickdealhunter.app@gmail.com?subject=Brick%20Deal%20Hunter%20Feedback')}
+              onPress={() => openLink('https://forms.gle/uBTxWtbtRdncMge46')}
             >
               <Text style={styles.linkRowText}>Send Feedback</Text>
               <ChevronRight size={20} color={colors.textTertiary} />
