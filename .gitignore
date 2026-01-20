@@ -70,3 +70,9 @@ node_modules/
 
 # Windows reserved filename (accidentally created)
 nul
+
+# Expo local files (contains device info)
+.expo/
+
+# Claude Code local settings (contains file paths)
+.claude/
